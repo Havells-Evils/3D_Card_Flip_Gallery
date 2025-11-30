@@ -3,22 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>3D Card Flip Gallery</title>
+  <title>3D Card Flip Gallery - Animals</title>
   <style>
     body {
       margin: 0;
-      background: #111;
+      background: linear-gradient(to bottom right, #222, #111);
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      font-family: Arial, sans-serif;
+      min-height: 100vh;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 20px;
+    }
+
+    h1 {
+      width: 100%;
+      text-align: center;
+      color: white;
+      margin-bottom: 40px;
+      font-size: 2.5rem;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
     }
 
     .card {
-      width: 200px;
-      height: 260px;
+      width: 280px;
+      height: 350px;
       margin: 20px;
       perspective: 1000px;
     }
@@ -29,6 +39,7 @@
       position: relative;
       transition: transform 1s;
       transform-style: preserve-3d;
+      cursor: pointer;
     }
 
     .card:hover .inner {
@@ -42,51 +53,98 @@
       border-radius: 15px;
       backface-visibility: hidden;
       overflow: hidden;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
 
     .front {
-      background: linear-gradient(to right, #00c6ff, #0072ff);
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      background: linear-gradient(135deg, #4a90e2, #7b4397);
       color: white;
-      font-size: 24px;
+      font-size: 32px;
+      font-weight: bold;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
     }
 
     .back {
       background: #fff;
       transform: rotateY(180deg);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #333;
-      font-size: 18px;
-      padding: 20px;
+      padding: 15px;
       text-align: center;
+    }
+
+    .animal-image {
+      width: 100%;
+      height: 70%;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .animal-info {
+      color: #333;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .card:nth-child(2) .front {
+      background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    }
+
+    .card:nth-child(3) .front {
+      background: linear-gradient(135deg, #56ab2f, #a8e063);
+    }
+
+    @media (max-width: 768px) {
+      .card {
+        width: 250px;
+        height: 320px;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
 <body>
+  <h1>Wildlife 3D Gallery</h1>
 
   <div class="card">
     <div class="inner">
-      <div class="front">HTML</div>
-      <div class="back">HyperText Markup Language is used to build web pages!</div>
+      <div class="front">Jaguar</div>
+      <div class="back">
+        <img src="https://images.unsplash.com/photo-1603398747227-2c6aeb89a8da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Jaguar" class="animal-image">
+        <div class="animal-info">
+          The jaguar is the largest cat in the Americas and the third-largest in the world.
+        </div>
+      </div>
     </div>
   </div>
 
   <div class="card">
     <div class="inner">
-      <div class="front">CSS</div>
-      <div class="back">Cascading Style Sheets make your site look beautiful.</div>
+      <div class="front">Kingfisher</div>
+      <div class="back">
+        <img src="https://images.unsplash.com/photo-1594736797933-d0ea3ff8db41?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Kingfisher" class="animal-image">
+        <div class="animal-info">
+          Kingfishers are small to medium-sized birds with large heads and long, sharp bills.
+        </div>
+      </div>
     </div>
   </div>
 
   <div class="card">
     <div class="inner">
-      <div class="front">JS</div>
-      <div class="back">JavaScript adds interactivity to websites like magic.</div>
+      <div class="front">Tiger</div>
+      <div class="back">
+        <img src="https://images.unsplash.com/photo-1561731216-c3a4d99437d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Tiger" class="animal-image">
+        <div class="animal-info">
+          The tiger is the largest living cat species and a member of the genus Panthera.
+        </div>
+      </div>
     </div>
   </div>
 
